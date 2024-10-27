@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # 默认各参数值，请自行修改.(注意:伪装路径不需要 / 符号开始,为避免不必要的麻烦,请不要使用特殊符号.)
-PORT=${PORT:-'8080'}
+PORT=${PORT:-'80'}
 UUID=${UUID:-'5194a31b-8c85-4ad0-9476-6c43ab11f146'}
 WSPATH=${WSPATH:-'argo'}
 
@@ -205,7 +205,7 @@ chmod +x cloudflared-linux-amd64
 
 # 下载 Xray，并伪装 xray 执行文件
 RANDOM_NAME=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
-wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip
+wget -O temp.zip https://github.com/XTLS/Xray-core/releases/download/v1.5.0/Xray-linux-64.zip
 unzip temp.zip xray geosite.dat geoip.dat
 mv xray ${RANDOM_NAME}
 rm -f temp.zip
