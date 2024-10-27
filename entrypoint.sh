@@ -205,7 +205,7 @@ chmod +x cloudflared-linux-amd64
 
 # 下载 Xray，并伪装 xray 执行文件
 RANDOM_NAME=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
-wget -O temp.zip https://github.com/XTLS/Xray-core/releases/download/v1.5.0/Xray-linux-64.zip
+wget -O temp.zip https://github.com/XTLS/Xray-core/releases/download/v1.8.24/Xray-linux-64.zip
 unzip temp.zip xray geosite.dat geoip.dat
 mv xray ${RANDOM_NAME}
 rm -f temp.zip
